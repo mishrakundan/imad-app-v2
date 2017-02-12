@@ -89,7 +89,7 @@ app.get('/:articleName',function (req,res){
     // articleName==article-one
     // articles[articleName]=={}content object for article one
     var articleName = req.params.articleName;
-    res.sendFile(path.join(__dirname, 'ui', 'articleone.html'));
+    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
     
 });
 
