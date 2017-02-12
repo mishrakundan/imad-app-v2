@@ -80,7 +80,8 @@ return htmlTemplet;
 }
 
 app.get('/', function (req, res) {
-     res.sendFile(path.join(__dirname, 'ui', 'article-one.html '));
+         res.send(ceateTemplate(articles[articleName]));
+     
     
     
  });
@@ -89,7 +90,8 @@ app.get('/:articleName',function (req,res){
     // articleName==article-one
     // articles[articleName]=={}content object for article one   
     var articleName = req.params.articleName;
-     res.send(ceateTemplate(articles[articleName]));
+    res.sendFile(path.join(__dirname, 'ui', 'article-one.html '));
+
     
     
 });
