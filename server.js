@@ -94,10 +94,12 @@ app.get('/:articleName',function (req,res){
     
 });
 app.get('/article-two',function (req,res){
+    var articleName = req.params.articleName;
     res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
     }); 
 
 app.get('/article-three',function (req,res){
+    var articleName = req.params.articleName;
     res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
     });
 
