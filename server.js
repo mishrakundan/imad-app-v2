@@ -9,7 +9,7 @@ var articles = {
 'article-one' : {
     title:  'Article One | kundan mishra',
     heading: 'Article one',
-    date:'february 12, 2017',
+    date:'feb 12, 2017',
     content: ` 
      <p>
                 This is the content of my first article. This is the content of my first article. This is the content of my first article.
@@ -76,37 +76,21 @@ function createTemplate (data) {
     </body>
 </html>`
 ;
-return htmlTemplet;
+return htmlTemplate;
 }
 
 app.get('/', function (req, res) {
-         res.send(ceateTemplate(articles[articleName]));
+         res.sendFile(path.join(__dirname, 'index.html'));
      
-    
-    
- });
+    });
 
 app.get('/:articleName',function (req,res){
     // articleName==article-one
-    // articles[articleName]=={}content object for article one   
+    // articles[articleName]== {} content object for article one   
     var articleName = req.params.articleName;
-    res.sendFile(path.join(__dirname, 'ui', 'article-one.html '));
+    res.send(createTemplate(articles[articleName]));
 
-    
-    
-});
-
-app.get('/article-two',function (req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-    }); 
-
-app.get('/article-three',function (req,res){
-        res.sendFile(path.join(__dirname, 'ui', 'article-three.html')); 
-        
-    });
-
-
-
+});    
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
