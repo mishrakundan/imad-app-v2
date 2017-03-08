@@ -5,6 +5,27 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var content={
+    title:'Article One | kundan mishra',
+    heading:'Article one',
+    date: 'feb 12,2017',
+    content:`
+          <p>
+                This is the content of my first article. This is the content of my first article. This is the content of my first article.
+         </p>
+         <p>
+                 This is the content of my first article. This is the content of my first article. This is the content of my first article.
+         </p>
+         <p>
+                 This is the content of my first article. This is the content of my first article. This is the content of my first article.
+         </p>`
+};
+
+var htmlTemplate=`
+
+
+
+`;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
