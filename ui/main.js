@@ -4,6 +4,16 @@ console.log('Loaded!');
 var element=document.getElementById('main-text');
 element.innerHTML =' Hi! I am Kundan Mishra,and this is my first webapp.';
 
+$('document').ready(function(){
+      var element = document.getElementById('main-text');
+      element.innerHTML = 'This value is inserted in the main.js';
+      var img = document.getElementById('croc');
+      img.onclick = function ()
+      {
+          img.style.marginleft = '100px';
+      };
+});
+
 //Move the image
     var img = document.getElementById('madi');
 var marginLeft = 0;
